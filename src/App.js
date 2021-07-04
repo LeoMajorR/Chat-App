@@ -49,9 +49,7 @@ function SignIn() {
       <button className="sign-in" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      <p>
-        Did you get kicked out? 😂😁
-      </p>
+      <p>Did you get kicked out? 😂😁</p>
     </>
   );
 }
@@ -69,7 +67,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(25);
+  const query = messagesRef.orderBy("createdAt").limit(1000);
 
   const [messages] = useCollectionData(query, { idField: "id" });
 
